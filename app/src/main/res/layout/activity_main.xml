@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textAlignment="textEnd"
+        android:textSize="30dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/result">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/result"
+        android:textAlignment="textEnd"
+        android:textSize="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="24+8"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/line">
+
+    </TextView>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        android:layout_marginBottom="6dp">
+
+    </View>
+
+   <LinearLayout
+       android:id="@+id/linear"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:orientation="horizontal">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/c"
+               android:text="C"
+               android:backgroundTint="@color/khaki"
+               android:textColor="@color/black"
+               android:onClick="onClearClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/back"
+               app:icon="@drawable/ic_baseline_backspace_24"
+               android:backgroundTint="@color/khaki"
+               android:onClick="onBackClick"
+
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/percent"
+               android:text="%"
+               android:onClick="onOperatorClick"
+               android:backgroundTint="@color/khaki"
+               android:textColor="@color/black"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/divide"
+               android:text="/"
+               android:onClick="onOperatorClick"
+               style="@style/operatorButton"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_gravity="center"
+           android:layout_height="match_parent"
+           android:orientation="horizontal">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/seven"
+               android:text="7"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/eight"
+               android:text="8"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/nine"
+               android:text="9"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/mul"
+               android:text="*"
+               android:onClick="onOperatorClick"
+               style="@style/operatorButton"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:orientation="horizontal">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/four"
+               android:text="4"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/five"
+               android:text="5"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/six"
+               android:text="6"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/minus"
+               android:text="-"
+               android:onClick="onOperatorClick"
+               style="@style/operatorButton"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:orientation="horizontal">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/one"
+               android:text="1"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/two"
+               android:text="2"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/three"
+               android:text="3"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/add"
+               android:text="+"
+               android:onClick="onOperatorClick"
+               style="@style/operatorButton"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:orientation="horizontal">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/ac"
+               android:text="AC"
+               android:textSize="21dp"
+               android:onClick="onAllclearClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/zero"
+               android:text="0"
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/dot"
+               android:text="."
+               android:onClick="onDigitClick"
+               style="@style/numberbutton"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/equal"
+               android:text="="
+               android:onClick="onEqualClick"
+               style="@style/operatorButton"/>
+
+       </LinearLayout>
+   </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
